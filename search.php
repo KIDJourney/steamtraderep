@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         } else {
             while ($row = mysql_fetch_array($result)){
                 for ($i = 0 ; $i < 6 ; $i ++){
-                    echo $row['$list[i]'] . "<br>";
+                    echo $row['$list[$i]'] . "<br>";
                 }
             echo "此人可能是骗子。.<br>请勿与他交易！。";
             mysql_close($con);
