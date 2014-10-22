@@ -10,6 +10,5 @@
 include("class/searchclass.php");
 
 $serachprocess = new search();
-$serachprocess
 
 ?>

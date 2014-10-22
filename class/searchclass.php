@@ -1,5 +1,4 @@
 <?php
-
 class search
 {
 //private
@@ -51,5 +50,6 @@ class search
         $input = htmlspecialchars($input);
         return $input;
     }
+
 
 }
