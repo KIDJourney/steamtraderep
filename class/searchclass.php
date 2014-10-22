@@ -28,7 +28,7 @@ class search
     {
         $mysqli = new mysqli(SAE_MYSQL_HOST_M.":".SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
         if ($mysqli->connect_errno){
-            die("Failed to connect to MySQL: (" . $mysqli->connect_errno . ")" . $mysqli->connect_error);
+            die("服务器连接失败！请稍候重试！.<br>");
         } else {
             $result = $mysqli->query($this->sqlquery);
             $row = $result->fetch_assoc();
