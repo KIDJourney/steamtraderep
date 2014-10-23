@@ -8,13 +8,8 @@ class search
 //public
     public function __construct()
     {
-<<<<<<< HEAD
         if ($_SERVER["REQUEST_METHOD"] != "POST"){
             die("你无权访问这个网页！");
-=======
-        if (!$_SERVER["REQUEST_METHOD"] == "POST"){
-            die("No right to request");
->>>>>>> 3144816f4de572ddf0412e8e79617a6ec956d06f
         } else {
             $userinput = $this->Fliter($_POST["userinput"]);
             $this->sqlquery = "SELECT * FROM trickerlist where 
@@ -27,7 +22,6 @@ class search
             $this->sqlserach();
         }
     }
-
     public function sqlserach()
     {
         $mysqli = new mysqli(SAE_MYSQL_HOST_M.":".SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
@@ -47,7 +41,7 @@ class search
         }
     }
 
-    public function Fliter($input)
+        public function Fliter($input)
     {
         $input = (string)$input;
         $input = trim($input);
@@ -56,5 +50,5 @@ class search
         return $input;
     }
 
-
 }
+?>
