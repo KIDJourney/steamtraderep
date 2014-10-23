@@ -58,8 +58,18 @@ class login
             } else {
                 echo "登录成功!";
                 $this->setsession();
+                $this->relocation();
             }
         }
+    }
+
+    public function relocation()
+    {
+        sleep(1);
+        $Jscript = <<<JS
+        <script language="JavaScript"> self.location='managepage.php'; </script>
+JS;
+        echo $Jscript ;
     }
 }
 ?>

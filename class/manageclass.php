@@ -3,6 +3,7 @@ class manage
 {
 
     //private
+    private $namelist = array("tiebaid"=>"贴吧ID :","steamid"=>"steam ID :","64weiid"=>"64位ID :","taobaoid"=>"淘宝ID :","zhifubaomail"=>"支付宝信息 :","zhifubaoid"=>"支付宝ID :");
     private tiebaid = "" ;
     private steamid = "" ;
     private 64weiid = "" ;
