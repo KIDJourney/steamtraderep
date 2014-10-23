@@ -12,12 +12,12 @@ if (!isset($_SESSION["admin"])){
 </head>
 <body>
     <form action = "$_SERVER['PHP_SELF']"  method = "post" >
-        <input type = "text" name = "tiebaid" > <br>
-        <input type = "text" name = "steamid" > <br>
-        <input type = "text" name = "64weiid" > <br>
-        <input type = "text" name = "taobaid" > <br>
-        <input type = "text" name = "zhifubaomail" > <br>
-        <input type = "text" name = "zhifubaoid" > <br>
+        贴吧ID :<input type = "text" name = "tiebaid" > <br>
+        steamID:<input type = "text" name = "steamid" > <br>
+        64位ID :<input type = "text" name = "64weiid" > <br>
+        淘宝ID :<input type = "text" name = "taobaid" > <br>
+        支付宝信息 :<input type = "text" name = "zhifubaomail" > <br>
+        支付宝ID   :<input type = "text" name = "zhifubaoid" > <br>
         <input type = "submit" > <br>
     </form>
 </body>
