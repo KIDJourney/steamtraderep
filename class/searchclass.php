@@ -8,8 +8,13 @@ class search
 //public
     public function __construct()
     {
+<<<<<<< HEAD
         if ($_SERVER["REQUEST_METHOD"] != "POST"){
             die("你无权访问这个网页！");
+=======
+        if (!$_SERVER["REQUEST_METHOD"] == "POST"){
+            die("No right to request");
+>>>>>>> 3144816f4de572ddf0412e8e79617a6ec956d06f
         } else {
             $userinput = $this->Fliter($_POST["userinput"]);
             $this->sqlquery = "SELECT * FROM trickerlist where 

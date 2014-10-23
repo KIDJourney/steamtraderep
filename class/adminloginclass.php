@@ -8,7 +8,11 @@ class login
     //public
     public function __construct()
     {
+<<<<<<< HEAD
         if ($_SERVER["REQUEST_METHOD"] != "post"){
+=======
+        if (!$_SERVER["REQUEST_METHOD"] == "post"){
+>>>>>>> 3144816f4de572ddf0412e8e79617a6ec956d06f
             $this->errorinfo("你无权访问这个网站！");
         } else {
             $this->adminID = $this->Fliter($_POST["adminID"]);
