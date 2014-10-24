@@ -22,3 +22,8 @@ if (!isset($_SESSION["admin"])){
     </form>
 </body>
 </html>
+<?php
+
+
+
+?>
