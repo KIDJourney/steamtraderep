@@ -8,9 +8,6 @@ class search
 //public
     public function __construct()
     {
-        if ($_SERVER["REQUEST_METHOD"] != "POST"){
-            die("你无权访问这个网页！");
-        } else {
             $this->userInput = $this->Fliter($_POST["userinput"]);
             $this->sqlQuery = "SELECT * FROM trickerlist where 
                      tiebaid like ? or 
@@ -20,8 +17,8 @@ class search
                      zhifubaomail like ? or
                      zhifubaoid like ?";
             $this->sqlserach($this->user);
-        }
     }
+
     public function sqlserach($userInput)
     {
         $userInput = "%" . $userInput . "%";

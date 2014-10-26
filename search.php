@@ -7,8 +7,10 @@
 
 
 <?php
-include("class/searchclass.php");
-
-$serachprocess = new search();
-
+if (!$_SERVER["REQUEST_METHOD"] == "POST"){
+    die("你无权访问这个网页！");
+} else {
+    include("class/searchclass.php");
+    $serachprocess = new search();
+}
 ?>
