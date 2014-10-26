@@ -65,4 +65,6 @@ JS;
         echo $Jscript ;
     }
 }
+
+//fix search method
 ?>
