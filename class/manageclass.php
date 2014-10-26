@@ -11,6 +11,7 @@ class manage
     private $zhifubaoid = "" ;
     private $admin = "";
     private $sqlquery = "";
+    private $reason = "";
     //public
     public function __construct()
     {
@@ -20,9 +21,10 @@ class manage
             $this->taobaoid = $_POST["taobaoid"];
             $this->zhifubaomail = $_POST["zhifubaomail"];
             $this->zhifubaoid = $_POST["zhifubaoid"];
+            $this->reason = $_POST["reason"]; 
             $this->admin = $_SESSION['admin'];
-            $this->sqlquery = "INSERT INTO trickerlist (tiebaid , steamid , 64weiid , taobaoid , zhifubaomail , zhifubaoid ,adder)
-                                            VALUES ('$this->tiebaid','$this->steamid','$this->idwei64','$this->taobaoid','$this->zhifubaomail','$this->zhifubaoid','$this->admin')";
+            $this->sqlquery = "INSERT INTO trickerlist (tiebaid , steamid , 64weiid , taobaoid , zhifubaomail , zhifubaoid ,adder , reason)
+                                            VALUES ('$this->tiebaid','$this->steamid','$this->idwei64','$this->taobaoid','$this->zhifubaomail','$this->zhifubaoid','$this->admin','$this->reason')";
             $this->sqlinsert();
     }
 

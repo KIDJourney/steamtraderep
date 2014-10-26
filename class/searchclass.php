@@ -34,7 +34,7 @@ class search
                 echo "未查询到相关结果。 . <br> 请谨慎交易。";
             } else {
                 foreach($row as $keys=>$value){
-                    if ($keys=='adder') break;
+                    if ($keys=='adder') continue;
                     echo $this->namelist[$keys] . " " . $value . "<br>";
                 }
                 echo "<br>" . "此人可能是骗子。.<br>请勿与他交易！。<br> 请将相关信息汇报给吧务！" ;
