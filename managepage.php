@@ -1,5 +1,10 @@
 <?php
 session_start();
+?>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<?php
 if (!isset($_SESSION["admin"])){
     die("你无权访问这个页面! . (from page) <br>");
 } else {
