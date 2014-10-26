@@ -3,34 +3,21 @@ class login
 {
     //private
     private $adminID = " " ;
-    private $password = " " ; 
-    private $sqlquery = " " ;
+    private $passWord = " " ; 
+    private $sqlQuery = " " ;
     //public
     public function __construct()
     {
-        if ($_SERVER["REQUEST_METHOD"] != "POST"){
-            $this->errorinfo("你无权访问这个网站！");
-        } else {
-            $this->adminID = $this->Fliter($_POST["adminID"]);
-            $this->password = $this->Fliter($_POST["password"]);
-            $this->sqlquery = "SELECT * FROM adminlist where 
-                               adminID = '$this->adminID'";
+            $this->adminID = $_POST["adminID"];
+            $this->passWord = $_POST["password"];
+            $this->sqlQuery = "SELECT * FROM adminlist where 
+                               adminID =?";
             $this->sqlcheck();
-        }
-    }
-
-    public function Fliter($input)
-    {
-        $input = (string)$input;
-        $input = trim($input);
-        $input = stripcslashes($input);
-        $input = htmlspecialchars($input);
-        return $input;
     }
 
     public function errorinfo($error)
     {
-        echo "登录失败！($error) . <br>";
+        echo "登录失败！($error) <br>";
         session_destroy();
         die();
     }
@@ -49,16 +36,22 @@ class login
         if ($mysqli->connect_errno){
             $this->errorinfo("服务器连接失败！请稍候重试！");
         } else {
-            $result = $mysqli->query($this->sqlquery);
-            $row = $result->fetch_assoc();
-            if (!isset($row)){
-                $this->errorinfo("用户名或密码错误！");
-            } elseif ($row["password"] != $this->password){
-                $this->errorinfo("用户名或密码错误!");
+            if (!$pQProcess = $mysqli->prepare($this->sqlQuery)){
+                $this->errorinfo("服务器连接失败！请稍候重试！");
             } else {
-                echo "登录成功!";
-                $this->setsession();
-                $this->relocation();
+                $username;
+                $password;
+                $pQProcess->bind_param("s",$this->adminID);
+                $pQProcess->execute();
+                $pQProcess->bind_result($username,$password);
+                $pQProcess->fetch();
+                if ($password != $this->passWord){
+                    $this->errorinfo("用户名或密码错误！");
+                } else {
+                    echo "登录成功！";
+                    $this->setsession();
+                    $this->relocation();
+                }
             }
         }
     }
