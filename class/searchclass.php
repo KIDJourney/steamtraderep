@@ -28,6 +28,7 @@ class search
         if ($mysqli->connect_errno){
             die("服务器连接失败！请稍候重试！.<br>");
         } else {
+            $num = 1;
             $flag = 0;
             if (!$pQProcess = $mysqli->prepare($this->sqlQuery)){
                 echo "prepare error";
@@ -38,9 +39,11 @@ class search
                 $pQProcess->bind_result($pQresult[0], $pQresult[1], $pQresult[2], $pQresult[3], $pQresult[4], $pQresult[5], $pQresult[6], $pQresult[7]);
                 while($pQProcess->fetch()){
                     $flag = 1;
+                    echo "查询结果#$num:<br>";
                     for ($i = 0 ; $i < 7 ; $i ++){
                         echo $this->nameList[$i] . $pQresult[$i] . "<br>";           
-                    }                    
+                    echo "<br>";
+                    }
                 }
                 if ($flag){
                     echo "<br>此人可能是骗子。<br>请勿与他交易！。<br> 请将相关信息反馈给吧务！";
