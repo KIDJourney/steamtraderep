@@ -37,12 +37,17 @@ class manage
     public function sqlinsert()
     {
         $mysqli = new mysqli(SAE_MYSQL_HOST_M.":".SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
-        if ($mysqli->errno){
+        if ($mysqli->connect_errno){
             $this->errorinfo("数据库连接失败，请稍候再试。");
         } else {
             $mysqli->query($this->sqlquery);
-            echo "插入成功 .<br>";
+            if ($mysqli->errno){
+                die("插入失败！请稍候重试！");
+            } else {
+                echo "插入成功 .<br>";
+            }
         }
+        $mysqli->close();
     }
 
 }
