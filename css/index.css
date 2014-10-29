@@ -5,6 +5,11 @@ body {
 }
 div {
 	display: block;
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0;
 }
 input:focus,textarea:focus {
 	outline: none;
@@ -56,4 +61,35 @@ input:focus,textarea:focus {
 	margin: 10px;
 	top: 0;
 	right: 0;
+}
+#footer {
+	margin-top: 200px;
+	text-align: center;
+	line-height: 1.5em;
+}
+#donate {
+	margin-top: 5px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#donate:hover {
+	color: #23d;
+}
+#donate-page {
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 99;
+	transition: 0.8s
+}
+#donate-img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url(../images/donate.png);
+	background-position: center;
+	background-repeat: no-repeat;
 }
