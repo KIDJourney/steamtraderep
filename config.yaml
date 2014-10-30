@@ -1,2 +1,5 @@
 name: streamrep
 version: 1
+handle:
+
+- errordoc: 404 /404.php

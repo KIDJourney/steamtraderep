@@ -7,11 +7,12 @@ class search
     private $sqlQuery = '';
 //public
     public function __construct()
-    {
+    {   
+	    $this->userInput = $_POST["userinput"];
         if (empty($this->userInput)){
             die("请勿输入空白信息!");
         }
-        $this->userInput = "%".$_POST["userinput"]."%";
+        $this->userInput = "%".$this->userInput."%";
         $this->sqlQuery = "SELECT * FROM trickerlist where 
                  tiebaid like ? or 
                  steamid like ? or 
