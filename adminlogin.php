@@ -1,6 +1,5 @@
 <?php
 session_start();
-die("shut down");
 ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -8,7 +7,7 @@ die("shut down");
 
 
 <?php
-
+// die("维护中"); //delete it after fixing
 if (!isset($_SESSION["admin"])){
     include("template/adminlogin.html");
     include("class/adminloginclass.php");

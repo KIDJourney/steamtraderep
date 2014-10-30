@@ -9,6 +9,9 @@ class login
     public function __construct()
     {
             $this->adminID = $_POST["adminID"];
+            if (empty($this->adminID)){
+                $this->errorinfo("用户名或密码错误！");
+            }
             $this->passWord = $_POST["password"];
             $this->sqlQuery = "SELECT * FROM adminlist where 
                                adminID =?";
@@ -44,13 +47,16 @@ class login
                 $pQProcess->bind_param("s",$this->adminID);
                 $pQProcess->execute();
                 $pQProcess->bind_result($username,$password);
-                $pQProcess->fetch();
-                if ($password != $this->passWord){
-                    $this->errorinfo("用户名或密码错误！");
+                if ($pQProcess->fetch()){
+                    if ($password != $this->passWord){
+                        $this->errorinfo("用户名或密码错误！");
+                    } else {
+                        echo "登录成功！";
+                        $this->setsession();
+                        $this->relocation();
+                    }
                 } else {
-                    echo "登录成功！";
-                    $this->setsession();
-                    $this->relocation();
+                    $this->errorinfo("用户名或密码错误！");
                 }
             }
         }
