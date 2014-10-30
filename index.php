@@ -1,6 +1,3 @@
-<?php
-session_start();
-include("class/refresh.php");
-refreshcheck();
+<?ph
 include("template/index.html");
 ?>
