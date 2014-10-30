@@ -5,7 +5,7 @@
 <script type="text/javascript">
     function relocation()
     {
-        self.location='index.html'; 
+        self.location='index.php'; 
     }
 </script>
 <body>

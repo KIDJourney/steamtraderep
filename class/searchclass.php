@@ -8,10 +8,10 @@ class search
 //public
     public function __construct()
     {
-        $this->userInput = "%".$_POST["userinput"]."%";
         if (empty($this->userInput)){
             die("请勿输入空白信息!");
         }
+        $this->userInput = "%".$_POST["userinput"]."%";
         $this->sqlQuery = "SELECT * FROM trickerlist where 
                  tiebaid like ? or 
                  steamid like ? or 
@@ -43,6 +43,8 @@ class search
                     for ($i = 0 ; $i < 7 ; $i ++){
                         echo $this->nameList[$i] . $pQresult[$i] . "<br>";          
                     }
+                    $num++;
+                    echo "<br>";
                 }
                 if ($flag){
                     echo "<br>此人可能是骗子。<br>请勿与他交易！。<br> 请将相关信息反馈给吧务！";
