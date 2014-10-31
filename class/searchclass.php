@@ -42,6 +42,9 @@ class search
                     $flag = 1;
                     echo "查询结果#$num:<br>";
                     for ($i = 0 ; $i < 7 ; $i ++){
+                        if (empty($pQresult[$i])){
+                            continue;
+                        }
                         echo $this->nameList[$i] . $pQresult[$i] . "<br>";          
                     }
                     $num++;
