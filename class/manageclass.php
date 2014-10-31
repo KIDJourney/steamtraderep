@@ -15,20 +15,29 @@ class manage
     //public
     public function __construct()
     {
-            $this->tiebaid = $_POST["tiebaid"];
-            $this->steamid = $_POST["steamid"];
-            $this->idwei64 = $_POST["64weiid"];
-            $this->taobaoid = $_POST["taobaoid"];
-            $this->zhifubaomail = $_POST["zhifubaomail"];
-            $this->zhifubaoid = $_POST["zhifubaoid"];
-            $this->reason = $_POST["reason"]; 
-            $this->admin = $_SESSION['admin'];
-            $this->sqlquery = "INSERT INTO trickerlist (tiebaid , steamid , 64weiid , taobaoid , zhifubaomail , zhifubaoid ,adder , reason)
-                                            VALUES ('$this->tiebaid','$this->steamid','$this->idwei64','$this->taobaoid','$this->zhifubaomail','$this->zhifubaoid','$this->admin','$this->reason')";
-            if (empty($this->reason)){
-                die("原因不可以为空！");
-            }
-            $this->sqlinsert();
+        $flag = 1
+        $this->tiebaid = $_POST["tiebaid"];
+        $this->steamid = $_POST["steamid"];
+        $this->idwei64 = $_POST["64weiid"];
+        $this->taobaoid = $_POST["taobaoid"];
+        $this->zhifubaomail = $_POST["zhifubaomail"];
+        $this->zhifubaoid = $_POST["zhifubaoid"];
+        $this->reason = $_POST["reason"]; 
+        $this->admin = $_SESSION['admin'];
+        $this->sqlquery = "INSERT INTO trickerlist (tiebaid , steamid , 64weiid , taobaoid , zhifubaomail , zhifubaoid ,adder , reason)
+                                        VALUES ('$this->tiebaid','$this->steamid','$this->idwei64','$this->taobaoid','$this->zhifubaomail','$this->zhifubaoid','$this->admin','$this->reason')";
+        if (empty($this->reason)){
+            die("原因不可以为空！");
+        }
+        if (empty($this->tiebaid) && empty($this->steamid) &&
+            empty($this->idwei64) && empty($this->taobaoid) &&
+            empty($this->zhifubaomail) && empty($this->zhifubaoid)){
+            die("请勿输入空信息！")
+        }
+
+
+        $this->sqlinsert();
+        }
     }
 
     public function errorinfo($error)
