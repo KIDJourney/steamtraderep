@@ -15,7 +15,6 @@ class manage
     //public
     public function __construct()
     {
-        $flag = 1
         $this->tiebaid = $_POST["tiebaid"];
         $this->steamid = $_POST["steamid"];
         $this->idwei64 = $_POST["64weiid"];
@@ -32,14 +31,11 @@ class manage
         if (empty($this->tiebaid) && empty($this->steamid) &&
             empty($this->idwei64) && empty($this->taobaoid) &&
             empty($this->zhifubaomail) && empty($this->zhifubaoid)){
-            die("请勿输入空信息！")
+            die("请勿输入空信息！");
         }
-
-
         $this->sqlinsert();
-        }
     }
-
+    
     public function errorinfo($error)
     {
         session_destroy();
