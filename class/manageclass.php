@@ -25,6 +25,9 @@ class manage
             $this->admin = $_SESSION['admin'];
             $this->sqlquery = "INSERT INTO trickerlist (tiebaid , steamid , 64weiid , taobaoid , zhifubaomail , zhifubaoid ,adder , reason)
                                             VALUES ('$this->tiebaid','$this->steamid','$this->idwei64','$this->taobaoid','$this->zhifubaomail','$this->zhifubaoid','$this->admin','$this->reason')";
+            if (empty($this->reason)){
+                die("原因不可以为空！");
+            }
             $this->sqlinsert();
     }
 
