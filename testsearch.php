@@ -17,7 +17,7 @@
 </html>
 
 <?php
-include("class/searchclass.php");
+include("class/testclass.php");
 $serachprocess = new search();
 echo "<br><button type='button' onclick='relocation()'>返回</button>";
 ?>
