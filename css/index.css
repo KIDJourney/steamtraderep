@@ -1,21 +1,3 @@
-body {
-	margin: 0;
-	padding: 0;
-	font-family: "Microsoft YaHei", sans-serif;
-}
-div {
-	display: block;
-	margin: 0;
-	padding: 0;
-}
-p {
-	margin: 0;
-}
-input:focus,textarea:focus {
-	outline: none;
-	border: 1px solid #eee;
-  	background: #eee !important;
-}
 #container {
 	width: 90%;
 	margin: 150px auto 0;
@@ -34,27 +16,6 @@ input:focus,textarea:focus {
 #search {
 	width: 90%;
 	margin: 0 auto;
-}
-.search {
-	float: left;
-	height: 32px;
-	font-family: "Microsoft YaHei", sans-serif;
-}
-#search-field {
-	width: 85%;
-	font-size: 18px;
-	padding-left: : 10px;
-}
-#search-button {
-	background-color: #bed;
-	margin-left: 20px;
-	padding: 0;
-	border: none;
-	width: 50px;
-	font-weight: 800;
-}
-#search-button:hover {
-	background-color: #8ed;
 }
 #admin-login {
 	position: absolute;

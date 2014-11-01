@@ -1,18 +1,21 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet/less" type="text/css" href="css/search.less">
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
 </head>
-<script type="text/javascript">
-    function relocation()
-    {
-        self.location='index.php'; 
-    }
-</script>
 <body>
-    <form id="search" action="<?php $_SERVER["PHP_SELF"];?>" method="post">
-        <input type="text" name="userinput">
-        <input type="submit" name="search">
-    </form>
+    <div id="container">
+        <form id="search" action="<?php $_SERVER["PHP_SELF"];?>" method="post">
+            <input class="search search-field" id="search-field" type="text" name="userinput">
+            <input class="search search-button" type="submit" name="search" value="查询">
+            <input class="search search-button" type="button" value="返回">
+        </form>
+        <div id="info"></div>
+    </div>
 </body>
 </html>
 
@@ -22,6 +25,5 @@ if (!$_SERVER["REQUEST_METHOD"] == "POST"){
 } else {
     include("class/searchclass.php");
     $serachprocess = new search();
-    echo "<br><button type='button' onclick='relocation()'>返回</button>";
 }
 ?>
