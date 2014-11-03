@@ -2,12 +2,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
-<script type="text/javascript">
-    function relocation()
-    {
-        self.location='index.php'; 
-    }
-</script>
 <body>
     <form id="search" action="<?php $_SERVER["PHP_SELF"];?>" method="post">
         <input type="text" name="userinput">
@@ -19,5 +13,7 @@
 <?php
 include("class/searchclass.php");
 $serachprocess = new search();
-echo "<br><button type='button' onclick='relocation()'>返回</button>";
+echo <<<html
+<br><button type="button" onclick="self.location='index.php'">返回</button>
+html;
 ?>
