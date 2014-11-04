@@ -1,10 +1,11 @@
 $(function() {
-
+    view = new View;
+    view.listItem();
 });
 
 View = (function() {
     function View() {
-        this.target = $('info');
+        this.target = $('#info');
     }
 
     View.prototype.listItem = function() {
@@ -23,7 +24,7 @@ View = (function() {
 
 Item = (function() {
     function Item(data) {
-        this.item = $('<div/>');
+        this.item = $('<li/>');
         this.data = data;
         this.render();
     }
@@ -36,7 +37,7 @@ Item = (function() {
             $('<span/>').addClass('taobaoid').text(this.data.taobaoid),
             $('<span/>').addClass('zhifubaomail').text(this.data.zhifubaomail),
             $('<span/>').addClass('zhifubaoid').text(this.data.zhifubaoid),
-            $('<span/>').addClass('reason').text(this.data.reason),
+            $('<span/>').addClass('reason').text(this.data.reason)
         );
     }
 

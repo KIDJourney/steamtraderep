@@ -3,6 +3,7 @@
 	margin: 30px auto 0;
 
 	#search {
+		height: 2em;
 		width: 100%;
 	}
 
@@ -11,60 +12,72 @@
 	}
 
 
-	.info {
+	#info {
 		margin-top: 20px;
+		list-style: none;
+		height: auto;
 
 		.search-item {
 			border-bottom: 1px solid #000;
+			height: auto;
+			padding-top: 1em;
+			padding-left: 1em;
+
+			&:after {
+				content: " ";
+				display: block;
+				height: 1em;
+				clear: both;
+			}
+
 			&:hover {
-				background-color: #ddd;
+				background-color: #eee;
 			}
 
 			span {
-				float: left;
+				display: block;
+				height: 1.5em;
 
 				&:before {
+					display: inline-block;
 					font-weight: bold;
-					width: 7em;
+					width: 6em;
 				}
 			}
 
 			.tiebaid {
 				&:before {
-					content: "贴吧ID：",
+					content: "贴吧ID：";
 				}
 			}
 			.steamid {
 				&:before {
-					content: "SteamID",
+					content: "SteamID：";
 				}
 			}
 			.idwei64 {
-				clear: left;
 				&:before {
-					content: "64位ID",
+					content: "64位ID：";
 				}
 			}
 			.taobaoid {
 				&:before {
-					content: "淘宝账号",
+					content: "淘宝账号：";
 				}
 			}
 			.zhifubaomail {
-				clear: left;
 				&:before {
-					content: "支付宝邮箱",
+					content: "支付宝邮箱：";
 				}
 			}
 			.zhifubaoid {
 				&:before {
-					content: "支付宝账号",
+					content: "支付宝账号：";
 				}
 			}
 			.reason {
-				clear: left;
 				&:before {
-					content: "添加理由",
+					content: "添加理由：";
 				}
 			}
 		}
