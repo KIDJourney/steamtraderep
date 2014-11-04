@@ -3,14 +3,15 @@ class search
 {
 //private
     private $nameList = array("贴吧ID :","steam ID :","64位ID :","淘宝ID :","支付宝信息 :","支付宝ID :","添加原因 :");
+    private $infoList ;
     private $userInput = '';
     private $sqlQuery = '';
+    private $json = array("result"=>array(),"status"=>0);
 //public
     public function __construct()
     {   
-        if($_SERVER["REQUEST_METHOD"] != "POST"){
-            die();
-        }
+        if ($_SERVER["REQUEST_METHOD"] != "POST") die();
+        $this->infoList = explode(' ',"tiebaid steamid 64weiid taobaoid zhifubaomail zhifubaoid");
 	    $this->userInput = $_POST["userinput"];
         if (empty($this->userInput)){
             die("请勿输入空白信息!");
@@ -44,16 +45,20 @@ class search
                 while($pQProcess->fetch()){
                     $flag = 1;
                     echo "查询结果#$num:<br>";
+                    $infoJson = array();
                     for ($i = 0 ; $i < 7 ; $i ++){
-                        $infoJson["$this->nameList[$i]"] = $pQresult[$i]; 
+                        $infoJson[$this->infoList[$i]] = $pQresult[$i]; 
                         if (empty($pQresult[$i])){
                             continue;
                         }
                         echo $this->nameList[$i] . $pQresult[$i] . "<br>";          
                     }
+                    array_push($this->json["result"],$infoJson);
                     $num++;
                     echo "<br>";
                 }
+                $this->json['status'] = $flag;
+                $this->json = json_encode($this->json);
                 if ($flag){
                     echo "<br>此人可能是骗子。<br>请勿与他交易！。<br> 请将相关信息反馈给吧务！";
                 } else {
@@ -65,13 +70,18 @@ class search
         $mysqli->close();
     }
 
-        public function Fliter($input)
+    public function Fliter($input)
     {
         $input = (string)$input;
         $input = trim($input);
         $input = stripcslashes($input);
         $input = htmlspecialchars($input);
         return $input;
+    }
+
+    public function getJson()
+    {
+        return $this->json;
     }
 
 }
