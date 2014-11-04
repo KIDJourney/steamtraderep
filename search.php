@@ -10,7 +10,7 @@
         <form id="search" action="<?php $_SERVER["PHP_SELF"];?>" method="post">
             <input class="search search-field" id="search-field" type="text" name="userinput">
             <input class="search search-button" type="submit" name="search" value="查询">
-            <input class="search search-button" type="button" value="返回">
+            <input class="search search-button" type="button" value="返回" onclick="self.location='index.php'">
         </form>
         <ul id="info"></ul>
     </div>
