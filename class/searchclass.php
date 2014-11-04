@@ -53,7 +53,6 @@ class search
                     }
                     array_push($this->json["result"],$infoJson);
                     $num++;
-                    echo "<br>";
                 }
                 $this->json['status'] = $flag;
                 $this->json = json_encode($this->json);
