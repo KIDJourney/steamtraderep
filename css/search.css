@@ -1,0 +1,61 @@
+#container {
+  width: 90%;
+  margin: 30px auto 0;
+}
+#container #search {
+  height: 2em;
+  width: 100%;
+}
+#container #search-field {
+  width: 20em;
+}
+#container #info {
+  margin-top: 20px;
+  list-style: none;
+  height: auto;
+}
+#container #info .search-item {
+  border-bottom: 1px solid #000;
+  height: auto;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+#container #info .search-item:after {
+  content: " ";
+  display: block;
+  height: 1em;
+  clear: both;
+}
+#container #info .search-item:hover {
+  background-color: #eee;
+}
+#container #info .search-item span {
+  display: block;
+  height: 1.5em;
+}
+#container #info .search-item span:before {
+  display: inline-block;
+  font-weight: bold;
+  width: 6em;
+}
+#container #info .search-item .tiebaid:before {
+  content: "贴吧ID：";
+}
+#container #info .search-item .steamid:before {
+  content: "SteamID：";
+}
+#container #info .search-item .idwei64:before {
+  content: "64位ID：";
+}
+#container #info .search-item .taobaoid:before {
+  content: "淘宝账号：";
+}
+#container #info .search-item .zhifubaomail:before {
+  content: "支付宝邮箱：";
+}
+#container #info .search-item .zhifubaoid:before {
+  content: "支付宝账号：";
+}
+#container #info .search-item .reason:before {
+  content: "添加理由：";
+}
