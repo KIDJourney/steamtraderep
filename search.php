@@ -25,7 +25,4 @@ $config = $serachprocess->getJson();
 echo <<<JSON
 <script>var config=$config;</script>
 JSON;
-echo <<<html
-<br><button type="button" onclick="self.location='index.php'">返回</button>
-html;
 ?>
