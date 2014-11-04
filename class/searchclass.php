@@ -11,7 +11,7 @@ class search
     public function __construct()
     {   
         if ($_SERVER["REQUEST_METHOD"] != "POST") die();
-        $this->infoList = explode(' ',"tiebaid steamid 64weiid taobaoid zhifubaomail zhifubaoid reason");
+        $this->infoList = explode(' ',"tiebaid steamid idwei64 taobaoid zhifubaomail zhifubaoid reason");
         $this->userInput = $_POST["userinput"];
         if (empty($this->userInput)){
             die("请勿输入空白信息!");
