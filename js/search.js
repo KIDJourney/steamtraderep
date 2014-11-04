@@ -36,7 +36,7 @@ Item = (function() {
             $('<span/>').addClass('taobaoid').text(this.data.taobaoid),
             $('<span/>').addClass('zhifubaomail').text(this.data.zhifubaomail),
             $('<span/>').addClass('zhifubaoid').text(this.data.zhifubaoid),
-            $('<span/>').addClass('reason').text(this.data.reason)
+            $('<span/>').addClass('reason').text(this.data.reason),
         );
     }
 

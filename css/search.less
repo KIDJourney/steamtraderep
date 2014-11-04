@@ -10,8 +10,63 @@
 		width: 20em;
 	}
 
-	.search-item {
-		height: 3em;
-		border-bottom: 1px solid #000;
+
+	.info {
+		margin-top: 20px;
+
+		.search-item {
+			border-bottom: 1px solid #000;
+			&:hover {
+				background-color: #ddd;
+			}
+
+			span {
+				float: left;
+
+				&:before {
+					font-weight: bold;
+					width: 7em;
+				}
+			}
+
+			.tiebaid {
+				&:before {
+					content: "贴吧ID：",
+				}
+			}
+			.steamid {
+				&:before {
+					content: "SteamID",
+				}
+			}
+			.idwei64 {
+				clear: left;
+				&:before {
+					content: "64位ID",
+				}
+			}
+			.taobaoid {
+				&:before {
+					content: "淘宝账号",
+				}
+			}
+			.zhifubaomail {
+				clear: left;
+				&:before {
+					content: "支付宝邮箱",
+				}
+			}
+			.zhifubaoid {
+				&:before {
+					content: "支付宝账号",
+				}
+			}
+			.reason {
+				clear: left;
+				&:before {
+					content: "添加理由",
+				}
+			}
+		}
 	}
 }

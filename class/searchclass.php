@@ -23,7 +23,7 @@ class search
                  taobaoid like ? or
                  zhifubaomail like ? or
                  zhifubaoid like ?";
-        $this->sqlserach();
+        // $this->sqlserach();
     }
 
     public function sqlserach()
