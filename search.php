@@ -19,10 +19,13 @@
 </html>
 
 <?php
-if (!$_SERVER["REQUEST_METHOD"] == "POST"){
-    die("你无权访问这个网页！");
-} else {
-    include("class/searchclass.php");
-    $serachprocess = new search();
-}
+include("class/searchclass.php");
+$serachprocess = new search();
+$config = $serachprocess->getJson();
+echo <<<JSON
+<script>var config=$config;</script>
+JSON;
+echo <<<html
+<br><button type="button" onclick="self.location='index.php'">返回</button>
+html;
 ?>
