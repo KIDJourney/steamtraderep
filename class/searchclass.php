@@ -36,7 +36,7 @@ class search
             $num = 1;
             $flag = 0;
             if (!$pQProcess = $mysqli->prepare($this->sqlQuery)){
-                echo "prepare error";
+                die("prepare error");
             } else {
                 $pQresult = array('s1','s2','s3','s4','s5','s6','s7','s8');
                 $pQProcess->bind_param("ssssss",$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput);
@@ -56,11 +56,6 @@ class search
                 }
                 $this->json['status'] = $flag;
                 $this->json = json_encode($this->json);
-                if ($flag){
-                    echo "<br>此人可能是骗子。<br>请勿与他交易！。<br> 请将相关信息反馈给吧务！";
-                } else {
-                    echo "没有找到相关信息，请谨慎进行交易！.<br>";
-                }
                 $pQProcess->close();
             }
         }

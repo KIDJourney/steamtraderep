@@ -19,7 +19,7 @@ View = (function() {
 
     View.prototype.listItem = function() {
         if (config.status == 0)
-            View.showMassage("没有找到相关结果=w=（但不代表此人不是骗子）");
+            View.showMassage("没有找到相关结果，请谨慎交易！");
         else {
             View.showMassage("此人可能是骗子。请勿与他交易！。请将相关信息反馈给吧务！");
             for (var i = 0; i < config.result.length; i++) {
