@@ -13,6 +13,7 @@
             <input class="search search-button" type="button" value="返回" onclick="self.location='index.php'">
         </form>
         <ul id="info"></ul>
+        <div id="massage-bar"></div>
     </div>
     <script type="text/javascript" src="js/search.js"></script>
 </body>

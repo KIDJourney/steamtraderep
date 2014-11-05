@@ -5,9 +5,9 @@ document.onload = window.onload = function() {
 	donatePage.style.height = window.innerHeight;
 
 	donateButton.onclick = function() {
-		donatePage.style.display = 'block';
+		$(donatePage).fadeIn(400);
 	}
 	donatePage.onclick = function() {
-		donatePage.style.display = 'none';
+		$(donatePage).fadeOut(400);;
 	}
 }
