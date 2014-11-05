@@ -23,10 +23,10 @@ View = (function() {
     View.prototype.showMassage = function(t) {
         var box = $('#massage-bar');
         box.append($(t));
-        box.fadeIn(400, function() {
+        box.fadeIn(200, function() {
             setTimeout(function() {
                 box.fadeOut(400);
-            }, 800);
+            }, 1000);
         });
     }
 

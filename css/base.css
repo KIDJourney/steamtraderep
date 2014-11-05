@@ -51,4 +51,5 @@ input:focus,textarea:focus {
 	width: 600px;
 	height: 150px;
 	background-color: #42BAFF;
+	opacity: 0.9;
 }
