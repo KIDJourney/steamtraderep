@@ -56,11 +56,6 @@ class search
                 }
                 $this->json['status'] = $flag;
                 $this->json = json_encode($this->json);
-                if ($flag){
-                    echo "<br>此人可能是骗子。<br>请勿与他交易！。<br> 请将相关信息反馈给吧务！";
-                } else {
-                    echo "没有找到相关信息，请谨慎进行交易！.<br>";
-                }
                 $pQProcess->close();
             }
         }
