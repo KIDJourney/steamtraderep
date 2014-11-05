@@ -37,3 +37,18 @@ input:focus,textarea:focus {
 .search-button:hover {
 	background-color: #8ed;
 }
+
+#massage-bar {
+	color: #fff;
+	font-size: 32px;
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	margin-left: -300px;
+	padding: 30px 10px;
+	text-align: center;
+	width: 600px;
+	height: 150px;
+	background-color: #42BAFF;
+}

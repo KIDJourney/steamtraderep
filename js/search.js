@@ -12,11 +12,22 @@ View = (function() {
         if (config.status == 0)
             this.showMassage("没有找到相关结果=w=（但不代表此人不是骗子）");
         else {
+            this.showMassage("<p>此人可能是骗子。</p><p>请勿与他交易！。</p><p>请将相关信息反馈给吧务！</p>");
             for (var i = 0; i < config.result.length; i++) {
                 var item = new Item(config.result[i]);
                 this.target.append(item.item);
             }
         }
+    }
+
+    View.prototype.showMassage = function(t) {
+        var box = $('#massage-bar');
+        box.append($(t));
+        box.fadeIn(400, function() {
+            setTimeout(function() {
+                box.fadeOut(400);
+            }, 800);
+        });
     }
 
     return View;

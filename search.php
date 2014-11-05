@@ -18,6 +18,7 @@
             <input class="search search-button" type="button" value="返回">
         </form>
         <ul id="info"></ul>
+        <div id="massage-bar"></div>
     </div>
 </body>
 </html>
