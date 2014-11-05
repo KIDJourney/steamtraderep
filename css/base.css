@@ -46,10 +46,10 @@ input:focus,textarea:focus {
 	left: 50%;
 	top: 100px;
 	margin-left: -300px;
-	padding: 30px 10px;
+	padding: 50px 10px;
 	text-align: center;
 	width: 600px;
-	height: 150px;
+	height: 100px;
 	background-color: #42BAFF;
 	opacity: 0.9;
 }

@@ -14,8 +14,8 @@
     <div id="container">
         <form id="search" action="<?php $_SERVER["PHP_SELF"];?>" method="post">
             <input class="search search-field" id="search-field" type="text" name="userinput">
-            <input class="search search-button" type="submit" name="search" value="查询">
-            <input class="search search-button" type="button" value="返回">
+            <input class="search search-button" id="search-submit" type="submit" name="search" value="查询">
+            <a href="index.php"><input class="search search-button" type="button" value="返回"></a>
         </form>
         <ul id="info"></ul>
         <div id="massage-bar"></div>
