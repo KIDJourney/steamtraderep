@@ -1,3 +1,6 @@
+body {
+	overflow: hidden;
+}
 #container {
 	width: 90%;
 	margin: 150px auto 0;
@@ -32,6 +35,9 @@
 	margin-top: 5px;
 	font-weight: bold;
 	cursor: pointer;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s; 
+	transition: 0.2s;
 }
 #donate:hover {
 	color: #23d;
@@ -44,7 +50,6 @@
 	width: 100%;
 	background-color: rgba(0,0,0,.7);
 	z-index: 99;
-	transition: 0.8s
 }
 #donate-img {
 	position: absolute;
