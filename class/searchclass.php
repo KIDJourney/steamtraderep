@@ -36,7 +36,7 @@ class search
             $num = 1;
             $flag = 0;
             if (!$pQProcess = $mysqli->prepare($this->sqlQuery)){
-                echo "prepare error";
+                die("prepare error");
             } else {
                 $pQresult = array('s1','s2','s3','s4','s5','s6','s7','s8');
                 $pQProcess->bind_param("ssssss",$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput);
