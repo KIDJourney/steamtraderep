@@ -21,4 +21,3 @@ for($i=0;$i<100;$i++){ //加入干扰象素
 }
 ImagePNG($im);
 ImageDestroy($im);
-?>
