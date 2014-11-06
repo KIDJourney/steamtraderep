@@ -1,17 +1,18 @@
-<?php
+﻿<?php
 class search
 {
 //private
     private $nameList = array("贴吧ID :","steam ID :","64位ID :","淘宝ID :","支付宝信息 :","支付宝ID :","添加原因 :");
+    private $infoList ;
     private $userInput = '';
     private $sqlQuery = '';
+    private $json = array("result"=>array(),"status"=>0);
 //public
     public function __construct()
     {   
-        if($_SERVER["REQUEST_METHOD"] != "POST"){
-            die();
-        }
-	    $this->userInput = $_POST["userinput"];
+        if ($_SERVER["REQUEST_METHOD"] != "POST") die();
+        $this->infoList = explode(' ',"tiebaid steamid idwei64 taobaoid zhifubaomail zhifubaoid reason");
+        $this->userInput = $_POST["userinput"];
         if (empty($this->userInput)){
             die("请勿输入空白信息!");
         }
@@ -35,7 +36,7 @@ class search
             $num = 1;
             $flag = 0;
             if (!$pQProcess = $mysqli->prepare($this->sqlQuery)){
-                echo "prepare error";
+                die("prepare error");
             } else {
                 $pQresult = array('s1','s2','s3','s4','s5','s6','s7','s8');
                 $pQProcess->bind_param("ssssss",$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput,$this->userInput);
@@ -43,30 +44,36 @@ class search
                 $pQProcess->bind_result($pQresult[0], $pQresult[1], $pQresult[2], $pQresult[3], $pQresult[4], $pQresult[5], $pQresult[6], $pQresult[7]);
                 while($pQProcess->fetch()){
                     $flag = 1;
-                    echo "查询结果#$num:<br>";
+                    $infoJson = array();
                     for ($i = 0 ; $i < 7 ; $i ++){
-                        $infoJson["$this->nameList[$i]"] = $pQresult[$i]; 
+                        $infoJson[$this->infoList[$i]] = $pQresult[$i]; 
                         if (empty($pQresult[$i])){
                             continue;
                         }
-                        echo $this->nameList[$i] . $pQresult[$i] . "<br>";          
                     }
+                    array_push($this->json["result"],$infoJson);
                     $num++;
-                    echo "<br>";
                 }
+                $this->json['status'] = $flag;
+                $this->json = json_encode($this->json);
                 $pQProcess->close();
             }
         }
         $mysqli->close();
     }
 
-        public function Fliter($input)
+    public function Fliter($input)
     {
         $input = (string)$input;
         $input = trim($input);
         $input = stripcslashes($input);
         $input = htmlspecialchars($input);
         return $input;
+    }
+
+    public function getJson()
+    {
+        return $this->json;
     }
 
 }
