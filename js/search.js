@@ -59,6 +59,9 @@ Item = (function() {
             $('<span/>').addClass('zhifubaoid').text(this.data.zhifubaoid),
             $('<span/>').addClass('reason').text(this.data.reason)
         );
+
+        if (this.data.tiebaid == "KIDJourney")
+            this.item.attr('id', 'KIDJourney');
     }
 
     return Item;
