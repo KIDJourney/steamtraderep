@@ -24,7 +24,6 @@
   content: " ";
   display: block;
   height: 1em;
-  clear: both;
 }
 #container #info .search-item:hover {
   background-color: #eee;
@@ -58,4 +57,16 @@
 }
 #container #info .search-item .reason:before {
   content: "添加理由：";
+}
+#container #info #KIDJourney:before {
+  background-color: #42BAFF;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin-left: -1em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0 0.5em 1em;
+  width: 100%;
+  content: "别理这傻逼↓            by 前端的Hetong";
+  white-space: pre;
 }
