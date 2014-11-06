@@ -14,7 +14,7 @@ class search
         $this->infoList = explode(' ',"tiebaid steamid idwei64 taobaoid zhifubaomail zhifubaoid reason");
         $this->userInput = $_POST["userinput"];
         if (empty($this->userInput)){
-            die("请勿输入空白信息!");
+            die("");
         }
         $this->userInput = "%".$this->userInput."%";
         $this->sqlQuery = "SELECT * FROM trickerlist where 
