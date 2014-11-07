@@ -8,6 +8,9 @@ class login
     //public
     public function __construct()
     {
+            if ($_POST["vcode"]!=$_SESSION["VCODE"]){
+                $this->errorinfo("验证码错误！");
+            }            
             $this->adminID = $_POST["adminID"];
             if (empty($this->adminID)){
                 $this->errorinfo("用户名或密码错误！");
