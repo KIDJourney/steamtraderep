@@ -1,0 +1,27 @@
+.header {
+  margin-top: 15px;
+  height: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.header .header-logo {
+  color: #777;
+  float: left;
+  line-height: 40px;
+}
+.header .header-nav {
+  float: right;
+  list-style: none;
+  margin: 0;
+}
+.header .header-item {
+  float: left;
+  margin-left: 8px;
+  padding: 10px 15px;
+}
+.header .header-item:hover {
+  background-color: #ddd;
+}
+.header .header-item:hover a {
+  color: #3672A6;
+}

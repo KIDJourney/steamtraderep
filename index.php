@@ -1,3 +1,3 @@
 <?php
-include("template/index.html");
+include("template/index.php");
 ?>

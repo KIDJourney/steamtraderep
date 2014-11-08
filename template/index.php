@@ -13,6 +13,7 @@
 </head>
 <body>
     <div id="container">
+    <?php include("template/header.html"); ?>
         <div id="title">
             <div id="main-title">Steam跳蚤市场吧骗子查询系统</div>
             <div id="sub-title">注意！检索不到不代表对方不是骗子！</div>
@@ -21,7 +22,6 @@
             <input class="search-field search" type="text" name="userinput" placeholder="&nbsp要检索的信息(贴吧id steam 常用id 64位id 淘宝id 支付宝邮箱 支付宝账号)">
             <input class="search-button search" type="submit" value="查询">
         </form> <br>
-        <a href="adminlogin.php" id="admin-login">管理员登录</a>
     </div>
     <div id="footer">
         <div id="declaration">
