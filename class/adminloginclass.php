@@ -75,5 +75,3 @@ JS;
     }
 }
 
-//fix search method
-?>
