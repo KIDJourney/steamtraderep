@@ -1,4 +1,5 @@
-<?php
+﻿<?php
+    $json = array();
     if ($_SERVER["REQUEST_METHOD"] != "GET")
         die();
     $mysqli = new mysqli(SAE_MYSQL_HOST_M.":".SAE_MYSQL_PORT,SAE_MYSQL_USER,SAE_MYSQL_PASS,SAE_MYSQL_DB);
@@ -7,4 +8,8 @@
     }
     $query = "SELECT * FROM donator";
     $result = $mysqli->query($query);
-    print_r($result);
+    while ($row = $result->fetch_assoc()){
+        $json[] = $row;
+    }
+    $json = json_encode($json);
+    echo $json;
