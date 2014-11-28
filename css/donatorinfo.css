@@ -1,0 +1,39 @@
+#container {
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+}
+#container #title {
+  display: block;
+  margin: 50px auto;
+  width: 19em;
+  color: #777;
+}
+#container #donators {
+  margin-top: 20px;
+  height: auto;
+}
+#container #donators .donator-item {
+  border-bottom: 1px solid #000;
+  height: auto;
+  padding-top: 1em;
+  padding-left: 1em;
+}
+#container #donators .donator-item:after {
+  content: " ";
+  display: block;
+  height: 1em;
+}
+#container #donators .donator-item:hover {
+  background-color: #eee;
+}
+#container #donators .donator-item span {
+  display: block;
+  height: 1.5em;
+}
+#container #donators .donator-item .donator-name {
+  float: left;
+}
+#container #donators .donator-item .donator-amount {
+  float: right;
+}
