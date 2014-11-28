@@ -1,0 +1,46 @@
+#container {
+	margin: 0 auto;
+	padding: 0;
+	width: 90%;
+
+	#title {
+		display: block;
+		margin: 50px auto;
+		width: 19em;
+		color: #777;
+	}
+
+	#donators {
+		margin-top: 20px;
+		height: auto;
+
+		.donator-item {
+			border-bottom: 1px solid #000;
+			height: auto;
+			padding-top: 1em;
+			padding-left: 1em;
+
+			&:after {
+				content: " ";
+				display: block;
+				height: 1em;
+			}
+
+			&:hover {
+				background-color: #eee;
+			}
+
+			span {
+				display: block;
+				height: 1.5em;
+			}
+
+			.donator-name {
+				float: left;
+			}
+			.donator-amount {
+				float: right;
+			}
+		}
+	}
+}
