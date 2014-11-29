@@ -8,8 +8,7 @@
 			<a href="<?php echo base_url()?>">主页</a>
 		</li>
 		<li class="header-item">
-			<!-- <a href="search/donator">捐助&感谢</a> -->
-		    捐助者名单(维护中)
+			<a href="search/donator">捐助&感谢</a>
         </li>
 		<li class="header-item">
 			<!-- <a href="manage">管理</a> -->

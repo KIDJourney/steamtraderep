@@ -7,6 +7,12 @@
             $this->load->model('search_model');
         }
 
+        // public function index()
+        // {
+        //     echo "There are something wrong with our website. <br>
+        //         KIDJourney is busy on fixing it .";
+        // }
+
         public function index()
         {
             $this->load->helper('form');
