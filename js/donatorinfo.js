@@ -17,7 +17,7 @@ DonatorList = (function() {
 		var that = this;
 		var settings = {
 			type: 'GET',
-			url: 'class/donatorinfo.php',
+			url: '../ajax/donator',
 			dataType: 'json',
 			success: function(data) {
 				if (data) that.listDonator(data.donate);
