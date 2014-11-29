@@ -20,7 +20,7 @@ DonatorList = (function() {
 			url: 'class/donatorinfo.php',
 			dataType: 'json',
 			success: function(data) {
-				if (data) that.listDonator(data.donate);
+				if (data) that.listDonator(data);
 			},
 			error: function(data, status) {
 				console.log(status);
