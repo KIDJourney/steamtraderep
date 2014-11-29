@@ -34,15 +34,17 @@
                 } else {
                     $data['json']['status'] = 0;
                 }
+                $data['title'] = "查询结果";
                 $data['json'] = json_encode($data['json']);
-                // $this->load->view("template/header");
+                $this->load->view("template/header",$data);
                 $this->load->view("search/searchresult",$data);
             }    
         }
 
         public function donator()
         {
-            $this->load->view('template/header');
+            $data['title'] = "捐助者名单";
+            $this->load->view('template/header',$data);
             $this->load->view('template/topbar');
             $this->load->view('search/donatorinfo');
         }
