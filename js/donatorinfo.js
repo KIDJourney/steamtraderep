@@ -14,15 +14,16 @@ DonatorList = (function() {
 	}
 	
 	DonatorList.prototype.getDonator = function() {
+		var that = this;
 		var settings = {
 			type: 'GET',
 			url: 'class/donatorinfo.php',
-			dataType: 'jsonp',
+			dataType: 'json',
 			success: function(data) {
-				if (data) this.listDonator(data);
+				if (data) that.listDonator(data.donate);
 			},
 			error: function(data, status) {
-
+				console.log(status);
 			}
 		};
 		$.ajax(settings);
@@ -34,6 +35,7 @@ DonatorList = (function() {
 			$('<span/>').addClass('donator-name').text(data.name),
 			$('<span/>').addClass('donator-amount').text(data.amount)
 		);
+		return item[0];
 	}
 
 	return DonatorList;
