@@ -20,7 +20,7 @@ DonatorList = (function() {
 			url: '../ajax/donator',
 			dataType: 'json',
 			success: function(data) {
-				if (data) that.listDonator(data.donate);
+				if (data) that.listDonator(data);
 			},
 			error: function(data, status) {
 				console.log(status);
