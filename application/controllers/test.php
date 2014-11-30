@@ -10,9 +10,4 @@
         {
             $this->load->view("test/ajaxtest");
         }
-
-        function testest()
-        {
-            //fuck me
-        }
     }

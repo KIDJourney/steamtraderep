@@ -11,7 +11,8 @@
 			<a href="search/donator">捐助&感谢</a>
         </li>
 		<li class="header-item">
-			<a href="manage">管理</a>
+			<!-- <a href="manage">管理</a> -->
+            管理(维护中)
 		</li>
 	</ul>
 </div>
