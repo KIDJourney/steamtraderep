@@ -9,7 +9,7 @@
         public function donator()
         {
             $this->output->set_content_type('application/json');
-            $this->output->set_output(json_encode(array('donate'=>$this->ajax_model->getdonator())));
+            $this->output->set_output(json_encode($this->ajax_model->getdonator()));
             // print(json_encode(array('donate'=>
             //     $this->ajax_model->getdonator())));
         }

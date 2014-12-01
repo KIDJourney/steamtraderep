@@ -30,7 +30,7 @@
         {
             $trickerdata = array('tiebaid'=>$this->input->post('tiebaid'),
                                'steamid'=>$this->input->post('steamid'),
-                               '64weiid'=>$this->input->post('64weiid'),
+                               'idwei64'=>$this->input->post('idwei64'),
                                'taobaoid'=>$this->input->post('taobaoid'),
                                'zhifubaomail'=>$this->input->post('zhifubaomail'),
                                'zhifubaoid'=>$this->input->post('zhifubaoid'),
