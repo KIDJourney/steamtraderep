@@ -11,6 +11,9 @@
 
         public function index()
         {
+            if ($this->bancheck()){
+                return;
+            }
             $this->load->library('form_validation');
             $this->form_validation->set_rules('adminID','账号','required');
             $this->form_validation->set_rules('password','密码','required');
@@ -19,12 +22,22 @@
                 if ($this->form_validation->run() === false){
                     $data['humancheck'] = $this->humancheck();
                     $this->load->view('template/header');
-                    $this->load->view('manage/login',$data); 
+                    $this->load->view('manage/login',$data);
                 } else {
                     $result = $this->manage_model->checklogin();
-                    if (isset($result)){
+                    if ($result){
                         $this->session->set_userdata('adminID', $result);
                         redirect(base_url('manage/managepage'));
+                    } else {
+                        if (!$this->session->userdata('tryTime')){
+                            $this->session->set_userdata('tryTime',1);
+                        } else {
+                            $this->session->set_userdata('tryTime',$this->session->userdata('tryTime')+1);
+                        }
+                        if ($this->session->userdata('tryTime')>=5){
+                            $this->session->set_userdata('baned',true);
+                        }
+                        redirect(base_url('manage/index'));
                     }
                 }
             } else {
@@ -70,5 +83,12 @@
             return $cap;
         }
 
+        function bancheck()
+        {
+            if ($this->session->userdata('baned')){
+                $this->load->view('template/ban');
+                return true;
+            }
+        }
 
 }

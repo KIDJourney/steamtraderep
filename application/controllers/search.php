@@ -5,6 +5,7 @@
             parent::__construct();
             $this->load->helper('url');
             $this->load->model('search_model');
+            $this->load->library('session');
         }
 
         // public function index()
@@ -15,6 +16,10 @@
 
         public function index()
         {
+            if ($this->bancheck()){
+                return;
+            }
+            $this->session->unset_userdata('adminID');
             $this->load->helper('form');
             $this->load->library('form_validation');
             $data['title'] = "SteamTradeRep";
@@ -47,5 +52,13 @@
             $this->load->view('template/header',$data);
             $this->load->view('template/topbar');
             $this->load->view('search/donatorinfo');
+        }
+
+        function bancheck()
+        {
+            if ($this->session->userdata('baned')){
+                $this->load->view('template/ban');
+                return true;
+            }
         }
     }
