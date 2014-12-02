@@ -11,7 +11,7 @@
 			<a href="search/donator">捐助&感谢</a>
         </li>
 		<li class="header-item">
-			<a href="manage">管理</a>
+			<a href="<?php echo base_url('manage');?>">管理</a>
 		</li>
 	</ul>
 </div>
