@@ -9,8 +9,10 @@
         {
             $handle = fopen($url,"r");
             if ($handle){
-                
+                return stream_get_contents($handle);
             }
-
         }
+        
+        function 
+
     }

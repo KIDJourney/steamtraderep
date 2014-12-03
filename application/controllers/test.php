@@ -33,4 +33,11 @@
             $this->session->unset_userdata('tryTime');
             $this->session->unset_userdata('baned');
         }
+
+        public function crawlertest()
+        {
+            $url = "http://steamrep.com/search?q=KIDJourney";
+            $this->load->model("crawler_model");
+            echo $this->crawler_model->getUrlContent($url);
+        }
     }
