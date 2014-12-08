@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "search";
 $route['404_override'] = '';
+$route['searching/(:any)'] = 'search/searching/$1';
 $route['manage'] = 'manage';
 $route['search/(:any)'] = 'search/$1';
 $route['ajax/(:any)'] = 'ajax/$1';
