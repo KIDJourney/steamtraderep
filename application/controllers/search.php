@@ -13,6 +13,7 @@
         //     echo "There are something wrong with our website. <br>
         //         KIDJourney is busy on fixing it .";
         // }
+        
         public function index()
         {
             if ($this->bancheck()){
@@ -45,22 +46,22 @@
             }    
         }
 
-        public function searching($input = null)
+        public function fuck($input = NULL)
         {
-            if($input == null){
-                redirect(base_url('manage/index'));
+            if($input == NULL){
+                redirect(base_url());
             }
-            $result = $this->search_model->serach();
-            if (isset($result[0])){
-                foreach ($result as $key=>$value){
-                    $data['json']['result'][$key] = $value;
-                }
-                $data['json']['status'] = 1;
-            } else {
-                $data['json']['status'] = 0;
-            }
-            $this->load->view('template/header',$data);
-            $this->load->view('search/searchresult'$data);
+            // $result = $this->search_model->serach();
+            // if (isset($result[0])){
+            //     foreach ($result as $key=>$value){
+            //         $data['json']['result'][$key] = $value;
+            //     }
+            //     $data['json']['status'] = 1;
+            // } else {
+            //     $data['json']['status'] = 0;
+            // }
+            // $this->load->view('template/header',$data);
+            // $this->load->view('search/searchresult'$data);
         }
 
 
