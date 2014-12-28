@@ -40,4 +40,9 @@
             $this->load->model("crawler_model");
             echo $this->crawler_model->getUrlContent($url);
         }
+
+        public function urlcc($str)
+        {
+            echo $str;
+        }
     }

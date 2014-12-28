@@ -46,6 +46,28 @@
             }    
         }
 
+        public function findall($userinput)
+        {
+            $this->load->helper('form');
+            if ($this->bancheck()){
+                return;
+            }
+            $data['title'] = "SteamTradeRep";
+            $result = $this->search_model->findall($userinput);
+            if (isset($result[0])){
+                foreach ($result as $key => $value) {
+                    $data['json']['result'][$key] = $value;
+                }
+                $data['json']['status'] = 1;
+            } else {
+                $data['json']['status'] = 0;
+            }
+            $data['title'] = "查询结果";
+            $data['json'] = json_encode($data['json']);
+            $this->load->view("template/header",$data);
+            $this->load->view("search/searchresult",$data);
+        }
+
         public function fuck($input = NULL)
         {
             if($input == NULL){
