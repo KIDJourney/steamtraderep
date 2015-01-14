@@ -7,6 +7,10 @@
             $this->load->library('session');
         }
 
+        public function index()
+        {
+            echo "This a test page";
+        }
         // function ajaxtest()
         // {
         //     $this->load->view("test/ajaxtest");
@@ -45,4 +49,9 @@
         {
             echo $str;
         }
+        public function testget()
+        {
+            echo $_GET['content'];
+        }
+
     }

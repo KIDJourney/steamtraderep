@@ -155,7 +155,7 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 |
 */
 $config['allow_get_array']		= TRUE;
-$config['enable_query_strings'] = FALSE;
+$config['enable_query_strings'] = TRUE;
 $config['controller_trigger']	= 'c';
 $config['function_trigger']		= 'm';
 $config['directory_trigger']	= 'd'; // experimental not currently in use
@@ -211,7 +211,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |
 | Leave this BLANK unless you would like to set something other than the default
 | system/cache/ folder.  Use a full server path with trailing slash.
-| 若为空，默认key前缀为system_cache，对memcache和kvdb的数据缓存有效
+| 脠么脦陋驴脮拢卢脛卢脠脧key脟掳脳潞脦陋system_cache拢卢露脭memcache潞脥kvdb碌脛脢媒戮脻禄潞麓忙脫脨脨搂
 |
 */
 $config['cache_path'] = '';
@@ -358,13 +358,13 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-/*  SAE 特定配置 */
-/* 输出类页面缓存配置 
- * 使用 $config['cache_path'] 的配置作为前缀 默认为 "system_cache_"
- * 值：
- * '' 即使使用了 $this->output->cache(n); 也不会缓存
- * 'kvdb' 使用 KVDB 缓存 (需要开启SAE KVDB服务)
- * 'memcache' 使用 memcache 缓存 (需要开启SAE Memcache服务)
+/*  SAE 脤脴露篓脜盲脰脙 */
+/* 脢盲鲁枚脌脿脪鲁脙忙禄潞麓忙脜盲脰脙 
+ * 脢鹿脫脙 $config['cache_path'] 碌脛脜盲脰脙脳梅脦陋脟掳脳潞 脛卢脠脧脦陋 "system_cache_"
+ * 脰碌拢潞
+ * '' 录麓脢鹿脢鹿脫脙脕脣 $this->output->cache(n); 脪虏虏禄禄谩禄潞麓忙
+ * 'kvdb' 脢鹿脫脙 KVDB 禄潞麓忙 (脨猫脪陋驴陋脝么SAE KVDB路镁脦帽)
+ * 'memcache' 脢鹿脫脙 memcache 禄潞麓忙 (脨猫脪陋驴陋脝么SAE Memcache路镁脦帽)
  */
 $config['sae_output_cache'] = 'kvdb';
 

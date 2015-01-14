@@ -7,9 +7,9 @@
     <div id="container">
         <div id="title">
             <div id="main-title">Steam跳蚤市场吧骗子查询系统</div>
-            <div id="sub-title">注意！检索不到不代表对方不是骗子！</div>
+            <div id="sub-title">谨慎交易！</div>
         </div>
-        <?php echo form_open("search/index"); ?>
+        <form action="search/searchresult" method="GET">
             <input class="search-field search" type="text" name="userinput" placeholder="&nbsp要检索的信息(贴吧id steam 常用id 64位id 淘宝id 支付宝邮箱 支付宝账号)">
             <input class="search-button search" type="submit" value="查询">
         </form> <br>
