@@ -11,7 +11,7 @@
         </div>
         <form action="search/searchresult" method="GET">
             <input class="search-field search" type="text" name="userinput" placeholder="&nbsp要检索的信息(贴吧id steam 常用id 64位id 淘宝id 支付宝邮箱 支付宝账号)">
-            <input class="search-button search" type="submit" value="查询">
+            <button type="submit" class="btn btn-sm btn-primary" style="margin:0px 15px;width:60px;">查询</button>
         </form> <br>
     </div>
     <div id="footer">

@@ -1,8 +1,12 @@
-<html>
+<html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title><?php echo $title; ?></title>
-    <meta http-equiv="pragma" content="no-cache"> 
-    <meta http-equiv="Cache-Control" content="no-store, must-revalidate">
-    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
-    <meta http-equiv="expires" content="0">  
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -11,6 +11,13 @@
         {
             echo "This a test page";
         }
+
+        public function viewtest()
+        {
+            $this->load->view("template/header");
+            $this->load->view("template/new");
+            $this->load->view("search/searchpage");
+        }
         // function ajaxtest()
         // {
         //     $this->load->view("test/ajaxtest");

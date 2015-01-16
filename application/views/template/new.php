@@ -1,10 +1,3 @@
-    <style>
-        #manage {
-          position: absolute;
-          float:right;
-      left:90%;
-        }
-    </style>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -13,7 +6,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="search/donator">捐助&感谢</a></li>
-            <li id="manage"><a href="<?php echo base_url('manage');?>">管理</a></li>
+            <li><a href="<?php echo base_url('manage');?>">管理</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
