@@ -4,7 +4,8 @@ This is the fist project that i write with a php frame and also the first time i
 
 This is a simple project with a mess database design before i lean more deeply in database design .
 
-This is a url :
+Here is a url of my project :
+
 http://steamrep.sinaapp.com/
 
 I wish what i write could help you :)
