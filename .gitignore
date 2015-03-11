@@ -4,6 +4,9 @@ application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
 
+.gitignore
+.idea
+
 *.jpg
 
 application/logs/*
