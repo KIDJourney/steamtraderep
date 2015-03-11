@@ -5,7 +5,7 @@ application/cache/*
 !application/cache/.htaccess
 
 *.jpg
-
+.idea
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
