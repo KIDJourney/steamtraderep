@@ -1,6 +1,6 @@
 </head>
 <body>
-    <?php echo form_open('manage/index'); ?>
+    <form action="manage/index" method="POST">
         管理员账户 : <input type="text" name="adminID"> <br>
         密码 : <input type="password" name="password"> <br>
         验证码 : <input type="text" name="humancheck"> <br>

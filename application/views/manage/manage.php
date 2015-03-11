@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </head>
 <body>
-    <?php echo form_open("manage/managepage"); ?>
+    <form action="managepage" method="POST">
         贴吧ID :<input type="text" name="tiebaid"> <br>
         steamID:<input type="text" name="steamid"> <br>
         64位ID :<input type="text" name="idwei64"> <br>
