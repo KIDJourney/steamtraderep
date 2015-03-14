@@ -11,7 +11,7 @@
 <body>
     <div id="container">
         <form action="searchresult" method="GET">
-            <input class="search search-field" id="search-field" type="text" name="userinput">
+            <input class="search search-field" id="search-field" type="text" name="userinput" value="<?php echo $stickyform; ?>">
             <input class="search search-button" type="submit">
             <input class="search search-button" type="button" value="返回" onclick="self.location='<?php echo  base_url();?>'">
         </form><br>

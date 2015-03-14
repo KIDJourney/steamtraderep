@@ -33,6 +33,7 @@
                 $this->load->view('template/topbar');
                 $this->load->view('search/searchresult'); 
             } else {
+                $data['stickyform'] = $_GET["userinput"];
                 $result = $this->search_model->getsearch($_GET["userinput"]);
                 if (isset($result[0])){
                     foreach ($result as $key => $value) {
