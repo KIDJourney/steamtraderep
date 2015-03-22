@@ -46,7 +46,7 @@
                 $data['title'] = "查询结果";
                 $data['json'] = json_encode($data['json']);
                 $this->load->view("template/header",$data);
-                // $this->load->view("template/topbar");
+                $this->load->view("template/topbar");
                 $this->load->view("search/searchresult",$data);
             }
         }

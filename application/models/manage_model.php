@@ -12,7 +12,7 @@
             $username = $this->input->post('adminID');
             $password = $this->input->post('password');
             $humancheck = $this->input->post('humancheck');
-            if ($humancheck!=$this->session->userdata('humancheck')){
+            if (strtolower($humancheck)!=strtolower($this->session->userdata('humancheck'))){
                 return false;
             }
             $result = $this->db->query("SELECT * FROM adminlist WHERE adminID = ?",array($username));

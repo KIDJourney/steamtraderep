@@ -12,6 +12,6 @@
             $query = array("tiebaid"=>$userinput,"steamid"=>$userinput,"idwei64"=>$userinput,"taobaoid"=>$userinput,"zhifubaomail"=>$userinput,"zhifubaoid"=>$userinput);
             $this->db->or_like($query);
             $result = $this->db->get("trickerlist");
-            return $result->result_array();     
+            return $result->result_array();
         }
     }

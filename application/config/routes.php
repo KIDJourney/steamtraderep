@@ -44,6 +44,7 @@ $route['test/(:any)'] = 'test/$1';
 $route['manage'] = 'manage';
 $route['findall/(:any)'] = "findall/$1";
 $route['ajax/(:any)'] = 'ajax/$1';
+$route['comment/(:any)']='comment/$1';
 
 
 /* End of file routes.php */

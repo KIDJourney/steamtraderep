@@ -1,4 +1,4 @@
-<html>
+`<html>
 <head>
     <script>
         var config=<?php echo $json;?>;
@@ -12,8 +12,8 @@
     <div id="container">
         <form action="searchresult" method="GET">
             <input class="search search-field" id="search-field" type="text" name="userinput" value="<?php echo $stickyform; ?>">
-            <input class="search search-button" type="submit">
-            <input class="search search-button" type="button" value="返回" onclick="self.location='<?php echo  base_url();?>'">
+            <button type="submit" class="btn btn-sm btn-primary" style="margin:0px 15px;width:60px;">查询</button>
+            <input class="btn btn-sm btn-primary" style="margin:0px;width:60px;" type="button" value="返回" onclick="self.location='<?php echo  base_url();?>'">
         </form><br>
         <ul id="info"></ul>
         <div id="massage-bar"></div>
