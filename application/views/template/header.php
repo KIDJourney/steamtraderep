@@ -10,5 +10,5 @@
     <title><?php echo $title; ?></title>
 
     <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <a href="http://webscan.360.cn/index/checkwebsite/url/steamrep.sinaapp.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/f4b6384fc13ac4ce10dd69713384b612"/></a>
+    <script type="text/javascript" src="<?php echo base_url('js/jquery-2.1.0.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('js/ddos.js');?>"></script>    

@@ -1,4 +1,4 @@
-`<html>
+<html>
 <head>
     <script>
         var config=<?php echo $json;?>;
@@ -6,7 +6,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/base.css');?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/search.css');?>">
-    <script type="text/javascript" src="<?php echo base_url('js/jquery-2.1.0.min.js');?>"></script>
 </head>
 <body>
     <div id="container">

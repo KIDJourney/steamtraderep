@@ -1,4 +1,5 @@
     <script type="text/javascript" src="<?php echo base_url('js/jquery-2.1.0.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('js/ddos.js');?>"></script>    
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/base.css');?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/index.css');?>">
     <script type="text/javascript" src="<?php echo base_url('js/index.js');?>"></script>
