@@ -28,7 +28,7 @@
 
         public function searchresult()
         {
-            if (!isset($_GET["userinput"])){
+            if (!isset($_GET["userinput"]) and strlen($_GET['userinput'] > 4)){
                 $this->load->view('template/header',$data);
                 $this->load->view('template/topbar');
                 $this->load->view('search/searchresult'); 
