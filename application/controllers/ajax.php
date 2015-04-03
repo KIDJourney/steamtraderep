@@ -5,6 +5,7 @@
             parent::__construct();
             $this->load->model('ajax_model');
             $this->load->model('comment_model');
+            $this->load->library('session');
         }
 
         public function donator()
@@ -19,5 +20,9 @@
             $data = $this->comment_model->getcomment();
             $this->output->set_content_type('application/json');
             $this->output->set_output(json_encode($data));
+        }
+
+        public function cancel(){
+            $this->session->unset_userdata('baned');
         }
     }
