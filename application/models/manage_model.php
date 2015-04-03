@@ -11,10 +11,6 @@
         {
             $username = $this->input->post('adminID');
             $password = $this->input->post('password');
-            $humancheck = $this->input->post('humancheck');
-            if (strtolower($humancheck)!=strtolower($this->session->userdata('humancheck'))){
-                return false;
-            }
             $result = $this->db->query("SELECT * FROM adminlist WHERE adminID = ?",array($username));
             if ($data = $result->result_array()){
                 if ($data[0]['password'] == $password) {

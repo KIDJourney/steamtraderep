@@ -14,15 +14,16 @@
             if ($this->bancheck()){
                 return;
             }
+            $data['title'] = "Login";
+            $topbar['manage'] = 'active';
             $this->load->library('form_validation');
             $this->form_validation->set_rules('adminID','账号','required');
             $this->form_validation->set_rules('password','密码','required');
-            $this->form_validation->set_rules('humancheck','验证码','required');
             if($this->session->userdata('adminID') === false){
                 if ($this->form_validation->run() === false){
-                    $data['humancheck'] = $this->humancheck();
-                    $this->load->view('template/header');
-                    $this->load->view('manage/login',$data);
+                    $this->load->view('template/topbar',$topbar);
+                    $this->load->view('template/header',$data);
+                    $this->load->view('manage/login');
                 } else {
                     $result = $this->manage_model->checklogin();
                     if ($result){
@@ -37,7 +38,10 @@
                         if ($this->session->userdata('tryTime')>=5){
                             $this->session->set_userdata('baned',true);
                         }
-                        redirect(base_url('manage/index'));
+                        $mess['errorMes'] = "ID or Password wrong ";
+                        $this->load->view('template/topbar',$topbar);
+                        $this->load->view('template/header',$data);
+                        $this->load->view('manage/login',$mess);
                     }
                 }
             } else {
@@ -48,6 +52,7 @@
         public function managepage()
         {
             $data['status'] = '';
+            $data['title'] = 'manage';
             if (!$this->session->userdata('adminID')){
                 redirect(base_url('manage'));
             } else {
@@ -55,6 +60,7 @@
                 $this->form_validation->set_message('required','%s不能为空！');
                 $this->form_validation->set_rules('reason','添加原因','required');
                 if ($this->form_validation->run() === false){
+                    $this->load->view('template/header',$data);
                     $this->load->view('manage/manage',$data);
                 } else {
                     if ($this->manage_model->addinfo()){
@@ -62,26 +68,27 @@
                     } else {
                         $data['status'] = '添加失败，服务器错误。';
                     }
+                    $this->load->view('template/header',$data);
                     $this->load->view('manage/manage',$data);
                 }
             }
         }
         
-        public function humancheck()
-        {
-            $this->load->helper('captcha');
-            $vals = array(
-                'img_path'=>'./captcha/',
-                'img_url'=>base_url('captcha/') . '/',
-                'font_path'=>'./path/to/fonts/texb.tff',
-                'img_width'=>'150',
-                'img_height'=>'30',
-                'expiration'=>5
-            );
-            $cap = create_captcha($vals);
-            $this->session->set_userdata('humancheck',strtolower($cap['word']));
-            return $cap;
-        }
+        // public function humancheck()
+        // {
+        //     $this->load->helper('captcha');
+        //     $vals = array(
+        //         'img_path'=>'./captcha/',
+        //         'img_url'=>base_url('captcha/') . '/',
+        //         'font_path'=>'./path/to/fonts/texb.tff',
+        //         'img_width'=>'150',
+        //         'img_height'=>'30',
+        //         'expiration'=>5
+        //     );
+        //     $cap = create_captcha($vals);
+        //     $this->session->set_userdata('humancheck',strtolower($cap['word']));
+        //     return $cap;
+        // }
 
         function bancheck()
         {
