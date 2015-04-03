@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="<?php if (isset($donator))echo $donator;?>"><a href="<?php echo base_url('search/donator');?>">捐助&感谢</a></li>
+            <li class="<?php if (isset($donator))echo $donator;?>"><a href="<?php echo base_url('donator');?>">捐助&感谢</a></li>
             <li id="manage" class="<?php if (isset($manage)) echo $manage;?>"><a href="<?php echo base_url('manage');?>">管理</a></li>
           </ul>
         </div><!--/.nav-collapse -->

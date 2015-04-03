@@ -50,14 +50,6 @@
                 $this->load->view("search/searchresult",$data);
             }
         }
-        public function donator()
-        {
-            $data['title'] = "捐助者名单";
-            $data['donator'] = "active";
-            $this->load->view('template/header',$data);
-            $this->load->view('template/topbar',$data);
-            $this->load->view('search/donatorinfo');
-        }
 
         function bancheck()
         {

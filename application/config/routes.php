@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "search";
+$route['donator'] = "donator";
 $route['404_override'] = '';
 $route['test/(:any)'] = 'test/$1';
 $route['manage'] = 'manage';
