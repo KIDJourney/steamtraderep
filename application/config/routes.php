@@ -38,12 +38,13 @@
 |
 */
 
-$route['default_controller'] = "search";
-$route['donator'] = "donator";
+$route['default_controller'] = 'search';
+$route['donator'] = 'donator';
+$route['vps'] = 'vps';
 $route['404_override'] = '';
 $route['test/(:any)'] = 'test/$1';
 $route['manage'] = 'manage';
-$route['findall/(:any)'] = "findall/$1";
+$route['findall/(:any)'] = 'findall/$1';
 $route['ajax/(:any)'] = 'ajax/$1';
 $route['comment/(:any)']='comment/$1';
 

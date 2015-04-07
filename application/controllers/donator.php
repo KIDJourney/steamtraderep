@@ -8,10 +8,10 @@
 
         public function index()
         {
-            $data['title'] = "捐助者名单";
-            $data['donator'] = "active";
+            $data['title'] = '捐助者名单';
+            $topbarinfo['donator'] = 'active';
             $this->load->view('template/header',$data);
-            $this->load->view('template/topbar',$data);
+            $this->load->view('template/topbar',$topbarinfo);
             $this->load->view('donator/donatorinfo');
         }
 
