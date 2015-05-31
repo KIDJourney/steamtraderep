@@ -40,7 +40,7 @@
 
 $route['default_controller'] = 'search';
 $route['donator'] = 'donator';
-$route['vps'] = 'vps';
+// $route['vps'] = 'vps';
 $route['404_override'] = '';
 $route['test/(:any)'] = 'test/$1';
 $route['manage'] = 'manage';
