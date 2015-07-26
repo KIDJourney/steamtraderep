@@ -1,9 +1,10 @@
 .DS_Store
-
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
 
+.gitignore
+*.mp3
 *.jpg
 .idea
 application/logs/*
