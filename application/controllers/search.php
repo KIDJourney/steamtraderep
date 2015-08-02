@@ -19,11 +19,14 @@
             if ($this->bancheck()){
                 return;
             }
+
+            $recentsearch = $this->search_model->getrecent();
+
             $this->session->unset_userdata('adminID');
             $data['title'] = "SteamTradeRep";
             $this->load->view('template/header',$data);
             $this->load->view('template/topbar');
-            $this->load->view('search/searchpage'); 
+            $this->load->view('search/searchpage',array('recent'=>$recentsearch));
         }
 
         public function searchresult()
@@ -51,6 +54,7 @@
             }
         }
 
+
         function bancheck()
         {
             if ($this->session->userdata('baned')){
@@ -58,4 +62,5 @@
                 return true;
             }
         }
+
     }

@@ -12,6 +12,17 @@
             <input class="search-field search" type="text" name="userinput" placeholder="&nbsp要检索的信息(贴吧id steam 常用id 64位id 淘宝id 支付宝邮箱 支付宝账号)">
             <button type="submit" class="btn btn-sm btn-primary" style="margin:0px 15px;width:60px;">查询</button>
         </form> <br>
+        <?php if (count($recent)) { ?>
+        <span class="text-info" style="margin-left:10px;margin-top:10px;">大家最近在搜：
+            <?php foreach($recent as $value){
+                $element = '<a href="' . 'http://steamrep.sinaapp.com/search/searchresult?userinput=' . urlencode($value['content']) . '">';
+                $element = $element . $value['content'] ;
+                $element = $element . '</a>';
+                echo $element . ' ';
+            }
+            ?>
+        </span>
+        <?php } ?>
     </div>
     <div id="footer">
         <div id="declaration">
