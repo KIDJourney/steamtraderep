@@ -8,7 +8,7 @@
 
         public function getdonator()
         {
-            $result = $this->db->query("SELECT * FROM donator");
+            $result = $this->db->query("SELECT * FROM donator order by level DESC");
             return $result->result_array();
         }
     }
