@@ -15,7 +15,7 @@
         <?php if (count($recent)) { ?>
         <span class="text-info" style="margin-left:10px;margin-top:10px;">大家最近在搜：
             <?php foreach($recent as $value){
-                $element = '<a href="' . 'http://steamrep.sinaapp.com/search/searchresult?userinput=' . urlencode($value['content']) . '">';
+                $element = '<a href="' . 'http://steamrep.sinaapp.com/search/searchresult?userinput=' . urlencode($value['content']) . '&flag=true">';
                 $element = $element . $value['content'] ;
                 $element = $element . '</a>';
                 echo $element . ' ';

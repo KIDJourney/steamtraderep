@@ -37,7 +37,7 @@
                 $this->load->view('search/searchresult'); 
             } else {
                 $data['stickyform'] = $_GET["userinput"];
-                $result = $this->search_model->getsearch($_GET["userinput"]);
+                $result = $this->search_model->getsearch($_GET["userinput"] , isset($_GET['flag'])?false:true);
                 if (isset($result[0])){
                     foreach ($result as $key => $value) {
                         $data['json']['result'][$key] = $value;

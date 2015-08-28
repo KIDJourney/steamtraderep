@@ -7,13 +7,13 @@
             $this->load->database();
         }
 
-        public function getsearch($userinput)
+        public function getsearch($userinput , $flag)
         {
             $query = array("tiebaid"=>$userinput,"steamid"=>$userinput,"idwei64"=>$userinput,"taobaoid"=>$userinput,"zhifubaomail"=>$userinput,"zhifubaoid"=>$userinput);
             $this->db->or_like($query);
             $result = $this->db->get("trickerlist");
             $result = $result->result_array();
-            if (count($result) > 0 and count($result) < 5){
+            if ($flag && count($result) > 0 && count($result) < 5){
                 $this->addrecent($userinput);
             }
             return $result;
