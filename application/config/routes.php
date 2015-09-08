@@ -44,6 +44,7 @@ $route['donator'] = 'donator';
 $route['404_override'] = '';
 $route['test/(:any)'] = 'test/$1';
 $route['manage'] = 'manage';
+$route['updatelog'] = 'updatelog';
 $route['findall/(:any)'] = 'findall/$1';
 $route['ajax/(:any)'] = 'ajax/$1';
 $route['comment/(:any)']='comment/$1';

@@ -26,7 +26,7 @@
     </div>
     <div id="footer">
         <div id="declaration">
-            <p>Copyright 2014 &nbsp By Hetong & KIDJourney</p>
+            <p>Copyright 2015 &nbsp By Hetong & KIDJourney</p>
         </div>
         <div id="donate">
             给萌萌的迅哥捐助
